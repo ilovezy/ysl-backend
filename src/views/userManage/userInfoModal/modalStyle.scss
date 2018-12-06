@@ -1,0 +1,23 @@
+.detail-info {
+  border: 1px solid #eaeaea;
+  margin-bottom: 15px;
+  padding: 15px;
+
+  .detail-item-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .detail-item {
+      text-align: center;
+      .number {
+        font-size: 24px;
+        color: #FF5F5F;
+        padding-bottom: 15px;
+      }
+      .text {
+        font-size: 20px;
+        color: #333;
+      }
+    }
+  }
+}
