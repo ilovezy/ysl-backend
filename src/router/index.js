@@ -1,13 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import UserManage from './modules/userManage'
-import BorrowManage from './modules/borrowManage'
-import OpeManage from './modules/opeManage'
-import FinanceManage from './modules/financeManage'
-import DataStatistics from './modules/dataStatistics'
-import MerchantManage from './modules/merchantManage'
-import Setting from './modules/setting'
-import BasicRoute from './modules/basicRoute'
+import teacherRoute from './modules/teacherRoute'
+import basicRoute from './modules/basicRoute'
 
 Vue.use(Router)
 
@@ -27,7 +21,7 @@ export const constantRouterMap = [
       path: 'dashboard',
       component: () => import('@/views/dashboard/index'),
       name: 'dashboard',
-      meta: { title: '首页', icon: 'home', noCache: true }
+      meta: {title: '首页', icon: 'home', noCache: true}
     }]
   },
   {
@@ -73,14 +67,8 @@ export const constantRouterMap = [
 ]
 
 export const asyncRouterMap = [
-  ...UserManage,
-  ...BorrowManage,
-  ...OpeManage,
-  ...FinanceManage,
-  ...DataStatistics,
-  ...MerchantManage,
-  ...Setting,
-  // ...BasicRoute,
+  ...teacherRoute,
+  ...basicRoute,
 ]
 
 export default new Router({

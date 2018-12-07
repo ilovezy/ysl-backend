@@ -97,10 +97,10 @@
         passwordType: 'password',
         loading: false,
 
-        character: 'student',
+        role: 1,
         enterStatusMap: [
-          {value: 'student', label: '学生'},
-          {value: 'teacher', label: '老师'},
+          {value: 1, label: '学生'},
+          {value: 2, label: '老师'},
         ],
       }
     },
@@ -134,7 +134,8 @@
             AXIOS.post('/member/account/login', {
               username: loginName,
               password: password,
-              from: 'pc'
+              from: 'pc',
+              role: self.role
             }).then(res => {
               USER.setToken(res.bearerToken)
               USER.setLoginName(loginName)

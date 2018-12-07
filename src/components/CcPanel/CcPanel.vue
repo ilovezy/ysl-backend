@@ -2,7 +2,8 @@
   <div class='panel'>
     <div class='panel-title'
          v-if='title'>{{title}}
-      <span class='panel-subtitle' v-if='subTitle'>
+      <span class='panel-subtitle'
+            v-if='subTitle'>
         {{subTitle}}
       </span>
     </div>
@@ -40,28 +41,31 @@
 <style lang='scss'
        scoped>
   @import "src/styles/variables.scss";
+
   .panel {
-    border: 1px solid $border-color;
+    // border: 1px solid $border-color;
     margin-bottom: 20px;
+    background: #fff;
     .panel-title {
-      border-bottom: 1px solid $border-color;
-      padding: 20px;
-      color: #39d2aa;
-      font-size: 18px;
+      // border-bottom: 1px solid $border-color;
+      padding: 30px;
+      height: 80px;
+      color: #454545;
+      font-size: 16px;
       font-weight: bold;
-      background: #F5FBFF;
+      // background: #F5FBFF;
       position: relative;
-      &:before {
+     /* &:before {
         content: '';
         display: inline-block;
         width: 3px;
         height: 20px;
-        background: #39d2aa;
+        // background: #39d2aa;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         left: 0;
-      }
+      }*/
       .panel-subtitle {
         font-size: 14px;
         color: #999;
@@ -71,6 +75,7 @@
     .panel-body {
       padding: 20px;
       background: #fff;
+      overflow-y: auto;
       &:after {
         visibility: hidden;
         display: block;

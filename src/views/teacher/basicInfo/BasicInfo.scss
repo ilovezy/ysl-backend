@@ -1,0 +1,110 @@
+.teacher-basic-info-page {
+  .basic-info-wrap {
+    background: #fff;
+    padding: 60px;
+    height: 600px;
+    margin-bottom: 30px;
+    overflow-y: auto;
+    .basic-top {
+      text-align: center;
+      padding-bottom: 40px;
+      .avatar {
+        display: inline-block;
+        width: 120px;
+        height: 120px;
+        border-radius: 120px;
+        overflow: hidden;
+        margin-bottom: 25px;
+        img {
+          width: 100%;
+        }
+      }
+
+      .name {
+        font-size: 24px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 1);
+      }
+    }
+
+    .basic-bottom {
+      .list-item {
+        padding-bottom: 30px;
+        &:last-child {
+          padding-bottom: 0;
+        }
+        .iconfont {
+          color: #999;
+        }
+
+        .content {
+          font-size: 18px;
+          line-height: 30px;
+          color: rgba(51, 51, 51, 1);
+        }
+      }
+    }
+  }
+
+  .notice-wrap {
+    background: #fff;
+    height: 600px;
+    .panel-body {
+      height: 520px !important;
+      overflow-y: auto;
+    }
+
+    .class-alert-info {
+      padding: 20px 40px;
+      background: #4CDF7B;
+      border-radius: 8px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      .left-wrap {
+        .left-title {
+          font-size: 24px;
+          margin-bottom: 35px;
+        }
+        .left-content {
+          font-size: 16px;
+        }
+      }
+
+      .right-btn {
+        color: #F19149;
+        background: #fff;
+        border: 1px solid #F19149;
+        text-align: center;
+        padding: 15px 30px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .bottom-wrap {
+    .panel-body {
+      padding: 30px!important;
+      padding-bottom: 50px !important;
+    }
+    .basic-item {
+      padding: 35px;
+      text-align: center;
+      border: 1px solid #BFBFBF;
+      cursor: pointer;
+
+      .icon-wrap {
+        height: 40px;
+        margin-bottom: 20px;
+      }
+
+      .text {
+        color: #454545;
+        font-size: 16px;
+      }
+    }
+  }
+}
