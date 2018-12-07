@@ -65,10 +65,10 @@ img {
 }
 
 .main-table-wrap {
-  padding: 15px;
-  padding-bottom: 50px;
-  background: #fff;
-  box-shadow:0px 2px 12px 0px rgba(0,0,0,0.06);
+  //padding: 15px;
+  //padding-bottom: 50px;
+  //background: #fff;
+  //box-shadow:0px 2px 12px 0px rgba(0,0,0,0.06);
 }
 
 h1 {
@@ -79,4 +79,14 @@ h1 {
 
 .simple-text{
   padding: 15px 0;
+}
+
+.simple-btn {
+  color: #F19149;
+  background: #fff;
+  border: 1px solid #F19149;
+  text-align: center;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 4px;
 }

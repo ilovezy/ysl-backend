@@ -45,7 +45,7 @@
                 2018年11月30日 18：00 45分钟
               </div>
             </div>
-            <div class='right-btn'>
+            <div class='simple-btn'>
               进入课堂
             </div>
           </div>
@@ -57,7 +57,7 @@
                 2018年11月30日 18：00 45分钟
               </div>
             </div>
-            <div class='right-btn'>
+            <div class='simple-btn'>
               进入课堂
             </div>
           </div>
@@ -69,7 +69,7 @@
                 2018年11月30日 18：00 45分钟
               </div>
             </div>
-            <div class='right-btn'>
+            <div class='simple-btn'>
               进入课堂
             </div>
           </div>
@@ -80,7 +80,7 @@
                 2018年11月30日 18：00 45分钟
               </div>
             </div>
-            <div class='right-btn'>
+            <div class='simple-btn'>
               进入课堂
             </div>
           </div>
