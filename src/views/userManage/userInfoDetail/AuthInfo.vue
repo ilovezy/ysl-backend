@@ -125,7 +125,7 @@
             background: #F5FBFF;
           }
           &.active {
-            background: #1989FA;
+            background: #39d2aa;
             color: #fff;
           }
         }

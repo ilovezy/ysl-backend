@@ -1,6 +1,6 @@
 <template>
   <div class="login-container">
-
+    <div class='login-bg'></div>
     <el-form class="login-form"
              autoComplete="on"
              :model="loginForm"
@@ -8,9 +8,26 @@
              ref="loginForm"
              label-position="left">
 
+      <img src='./img/logo_aa@2x.png'
+           class='login-logo'
+           alt=''>
+
       <div class="title-container">
-        <h3 class="title">闪电借条系统登录</h3>
+        <h3 class="title">进入优思路课堂</h3>
       </div>
+
+      <el-form-item prop="loginName">
+        <el-select v-model="character"
+                   style='width: 100%;'
+                   placeholder="请选择提现状态">
+          <el-option
+            v-for="item,index in enterStatusMap"
+            :key="'enterStatusMap' + index"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
 
       <el-form-item prop="loginName">
         <span class="svg-container svg-container_login">
@@ -39,8 +56,7 @@
         </span>
       </el-form-item>
 
-      <el-button type="primary"
-                 style="height: 54px;width:100%;margin-top: 10px;margin-bottom: 30px;font-size: 24px;"
+      <el-button class='login-btn'
                  :loading="loading"
                  @click.native.prevent="handleLogin">登录
       </el-button>
@@ -71,19 +87,34 @@
       }
       return {
         loginForm: {
-          loginName: window.isDev ? 'fhc' : '',
-          password: window.isDev ? '1qaz2wsx' : ''
+          loginName: window.isDev ? '17767213031' : '',
+          password: window.isDev ? '123123' : ''
         },
         loginRules: {
           loginName: [{required: true, trigger: 'blur', validator: validateUsername}],
-          password: [{required: true, trigger: 'blur', validator: validatePassword}]
+          // password: [{required: true, trigger: 'blur', validator: validatePassword}]
         },
         passwordType: 'password',
-        loading: false
+        loading: false,
+
+        character: 'student',
+        enterStatusMap: [
+          {value: 'student', label: '学生'},
+          {value: 'teacher', label: '老师'},
+        ],
       }
     },
-
+    created() {
+      // this.getActionPermission() //TODO 按钮权限
+      this.getTeacherList()
+    },
     methods: {
+      getTeacherList() {
+        AXIOS.post('/teacher/teacher/list').then(res => {
+          // this.$store.dispatch('addActionPermission', res)
+          // USER.setPermissions(res)
+        })
+      },
       showPwd() {
         if (this.passwordType === 'password') {
           this.passwordType = ''
@@ -103,6 +134,7 @@
             AXIOS.post('/member/account/login', {
               username: loginName,
               password: password,
+              from: 'pc'
             }).then(res => {
               USER.setToken(res.bearerToken)
               USER.setLoginName(loginName)
@@ -128,10 +160,39 @@
   $light_gray: #eee;
   $cursor: #fff;
 
+  .login-btn {
+    height: 54px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    background: #F19149;
+    color: #fff;
+
+    &:active,
+    &:hover {
+      background: darken(#F19149, 5%);
+      color: #fff;
+    }
+  }
+
+  .login-logo {
+    position: absolute;
+    width: 250px;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .login-bg {
+    background: url("./img/bg.png") no-repeat center;
+    background-size: cover;
+    height: 50%;
+    margin: 0 auto;
+  }
+
   /* reset element-ui css */
   .login-container {
-    background: url("./img/bg.png");
-    background-size: cover;
     .el-input {
       display: inline-block;
       height: 52px;
@@ -146,6 +207,12 @@
         color: #898F97;
         font-size: 18px;
         height: 52px;
+      }
+    }
+
+    .el-select {
+      .el-input {
+        width: 100%!important;
       }
     }
 
@@ -185,6 +252,7 @@
       margin: 0 auto;
       background: #fff;
       color: #000;
+      box-shadow: 0px 0 11px #eee;
     }
     .tips {
       font-size: 14px;
@@ -211,7 +279,7 @@
     .title-container {
       position: relative;
       .title {
-        font-size: 36px;
+        font-size: 24px;
         color: #000;
         margin: 0px auto 40px auto;
         text-align: center;

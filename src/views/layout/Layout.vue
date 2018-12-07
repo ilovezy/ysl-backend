@@ -45,9 +45,16 @@
       }
     },
     created() {
-      this.getActionPermission() //TODO 按钮权限
+      // this.getActionPermission() //TODO 按钮权限
+      this.getTeacherList()
     },
     methods: {
+      getTeacherList(){
+        AXIOS.post('/teacher/teacher/list').then(res => {
+          // this.$store.dispatch('addActionPermission', res)
+          // USER.setPermissions(res)
+        })
+      },
       getActionPermission() {
         AXIOS.post('/auth/menu/userAllActionMenus').then(res => {
           // this.$store.dispatch('addActionPermission', res)

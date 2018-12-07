@@ -148,7 +148,7 @@
           margin-left: 15px;
         }
         &.active {
-          border-top: 3px solid #1989FA;
+          border-top: 3px solid #39d2aa;
           &::before {
             content: '';
             background: #495060;

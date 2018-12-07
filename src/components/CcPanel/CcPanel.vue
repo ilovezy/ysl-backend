@@ -46,7 +46,7 @@
     .panel-title {
       border-bottom: 1px solid $border-color;
       padding: 20px;
-      color: #1989FA;
+      color: #39d2aa;
       font-size: 18px;
       font-weight: bold;
       background: #F5FBFF;
@@ -56,7 +56,7 @@
         display: inline-block;
         width: 3px;
         height: 20px;
-        background: #1989FA;
+        background: #39d2aa;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);

@@ -38,8 +38,7 @@ instance.interceptors.request.use(config => {
 
 instance.interceptors.response.use(res => {
   const data = res.data || {}
-  debugger
-  if (data.success) {
+  if (data.status == 1) {
     return data.result || {}
   } else if (data.error == "ERROR_AUTHORITY_TOKEN_NOT_EXIST"){
     // TODO 调到登录页面去

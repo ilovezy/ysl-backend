@@ -101,7 +101,7 @@
         </cc-panel>
 
         <cc-panel title='近6个月话费充值记录'>
-          <el-row style='padding: 15px; background: #1989FA; color: #fff;'>
+          <el-row style='padding: 15px; background: #39d2aa; color: #fff;'>
             <el-col :span="6">充值总金额：{{formatMoney(sumRechargeAmount)}}</el-col>
             <el-col :span="6">总充值次数：{{rechargeCount}}次</el-col>
             <el-col :span="6">平均单笔充值金额：{{formatMoney(averageRechargeAmount)}}</el-col>

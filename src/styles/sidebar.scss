@@ -86,7 +86,7 @@
   .sidebar-container .nest-menu .el-submenu>.el-submenu__title,
   .sidebar-container .el-submenu .el-menu-item {
     min-width: 180px !important;
-    background-color: $subMenuBg !important;
+    background-color: #39D2AA ;
     &:hover {
       background-color: $menuHover !important;
     }
@@ -104,7 +104,7 @@
 
   .el-menu-item.is-active {
     box-sizing: border-box;
-    border-left: 3px solid #1989FA!important;
+    border-left: 3px solid #F19149!important;
     >span {
       position: relative;
       left: -3px;

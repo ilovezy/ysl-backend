@@ -1,20 +1,20 @@
 <template>
   <el-scrollbar wrapClass="scrollbar-wrapper">
-    <div style='background: #025080; text-align: center; padding: 40px 0;' v-if='!isCollapse'>
+    <div style='background: #22C47D; text-align: center; padding: 40px 0;' v-if='!isCollapse'>
       <img src='../img/nav-logo.png'
            style='width: 150px;'
            alt=''>
     </div>
     <el-menu
       v-loading="loading"
-      element-loading-background="#025080"
+      element-loading-background="#24D185"
       mode="vertical"
       :show-timeout="200"
       :default-active="$route.path"
       :collapse="isCollapse"
-      background-color="#025080"
-      text-color="#bfcbd9"
-      active-text-color="#1989FA">
+      background-color="#22C47D"
+      text-color="#fff"
+      active-text-color="#fff">
       <sidebar-item v-for="route in routers"
                     :key="route.name"
                     :item="route"
@@ -39,11 +39,11 @@
       }
     },
     created() {
-      // this.getSidebar()
-      this.loadSidebar()
+      this.getLocalSidebar()
+      // this.loadSidebar()
     },
     methods: {
-      getSidebar() {
+      getLocalSidebar() {
         const self = this
         self.loading = true
         setTimeout(() => {
