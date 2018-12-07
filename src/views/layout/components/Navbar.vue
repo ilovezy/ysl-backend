@@ -62,7 +62,7 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import {mapGetters} from 'vuex'
   import Breadcrumb from '@/components/Breadcrumb'
   import Hamburger from '@/components/Hamburger'
   import USER from '../../../global/USER'
@@ -91,13 +91,19 @@
       },
 
       doLogout() {
-        USER.logout()
-        this.$store.dispatch('delAllViews')
-        this.$store.dispatch('delActionPermission')
-        this.$router.push('/login')
+        // USER.logout()
+        // this.$store.dispatch('delAllViews')
+        // this.$store.dispatch('delActionPermission')
+        const self = this
+        AXIOS.post('/member/account/logout').then(res => {
+          self.$message.success('退出登录成功,请重新登录')
+          setTimeout(() => {
+            self.$router.push('/login')
+          }, 1000)
+        })
       },
 
-      doOpenModal(){
+      doOpenModal() {
         this.dialogFormVisible = true
       },
 
@@ -133,7 +139,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    &:before ,&:after{
+    &:before, &:after {
       display: none;
     }
     .hamburger-container {

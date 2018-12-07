@@ -21,37 +21,37 @@
               :data="list"
               tooltip-effect="dark"
               style="width: 100%;"
-              max-height='600'
+              max-height='650'
               stripe
               v-loading="listLoading">
               <el-table-column
                 prop="mobile"
-                label="手机号"
+                label="上课学生"
                 width='140'
                 show-overflow-tooltip>
               </el-table-column>
 
               <el-table-column
                 prop="trueName"
-                label="姓名"
+                label="上课科目"
                 width='140'>
               </el-table-column>
 
               <el-table-column
                 prop="identityNumber"
-                label="身份证号"
+                label="上课内容"
                 width='200'
                 show-overflow-tooltip>
               </el-table-column>
 
               <el-table-column
                 prop="registerTime"
-                label="注册时间"
+                label="上课时间"
                 width='180'>
               </el-table-column>
 
               <el-table-column
-                label="是否首次审核"
+                label="上课时长"
                 width='120'
                 show-overflow-tooltip>
                 <template slot-scope="scope">
@@ -60,30 +60,11 @@
               </el-table-column>
 
               <el-table-column
-                label="审核状态"
-                width='140'
-                show-overflow-tooltip>
-                <template slot-scope="scope">
-                </template>
-              </el-table-column>
-
-              <el-table-column
-                prop='borrowLimit'
-                label="基础借款额度"
-                width='180'
-                show-overflow-tooltip>
-              </el-table-column>
-
-              <el-table-column
                 min-width='320'
                 fixed="right"
                 label="操作">
                 <template slot-scope="scope">
-                  <el-button size="mini"
-                             type='primary'
-                             v-permission='["platform:member:info:authX1"]'
-                             @click='goAuthInfo(scope.row.id)'>认证信息
-                  </el-button>
+                  <div class='simple-btn' @click='goAuthInfo(scope.row.id)'>进入课堂</div>
                 </template>
               </el-table-column>
             </el-table>

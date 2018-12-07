@@ -2,22 +2,22 @@
   .same-height {
     .panel-body {
       height: 700px;
-      overflow-y: auto;
+      overflow-y: auto!important;
+      padding-top: 0!important;
     }
   }
 
   .left-list-wrap {
     .panel-body {
       padding: 0 30px;
-      overflow-y: auto;
     }
     .list-container {
       background: #F7F7F7;
+      height: 650px;      overflow-y: auto;
     }
     .list-select-item {
-      padding: 15px;
+      padding: 20px;
       text-align: center;
-      margin-bottom: 15px;
       font-size: 24px;
       color: #454545;
 

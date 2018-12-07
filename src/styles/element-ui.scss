@@ -84,3 +84,11 @@
 .el-menu-item.is-active {
   background: darken(#30B08F, 5%)!important;
 }
+.el-table thead {
+  height: 60px;
+  font-size: 16px;
+  color: #333;
+  tr, th {  height: 60px;
+    background-color: #D9D9D9;
+  }
+}
