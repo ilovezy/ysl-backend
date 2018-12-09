@@ -88,7 +88,8 @@
       </el-col>
     </el-row>
 
-    <cc-panel title='教师基本培训' class='bottom-wrap'>
+    <cc-panel title='教师基本培训'
+              class='bottom-wrap'>
       <el-row :gutter='30'>
         <el-col :span='8'>
           <div class='basic-item'>
@@ -133,10 +134,29 @@
 
     created() {
       // this.getList()
+      // api/classroom/mywill
+      this.getDetail()
+      this.getMyWill()
     },
 
     methods: {
       formatDate,
+
+      getDetail() {
+        AXIOS.post('/student/student/mine').then(res => {
+          debugger
+        })
+      },
+      
+      getMyWill() {
+        AXIOS.post('/api/classroom/mywill').then(res => {
+          this.$message({
+            type: 'success',
+            message: '操作成功!'
+          })
+          // this.getList()
+        })
+      },
 
       doUnbind(row) {
         this.$confirm('确定解绑吗', {

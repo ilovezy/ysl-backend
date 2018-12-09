@@ -91,7 +91,7 @@
       },
 
       doLogout() {
-        // USER.logout()
+        USER.logout()
         // this.$store.dispatch('delAllViews')
         // this.$store.dispatch('delActionPermission')
         const self = this

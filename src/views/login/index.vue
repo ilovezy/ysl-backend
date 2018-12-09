@@ -17,9 +17,9 @@
       </div>
 
       <el-form-item prop="loginName">
-        <el-select v-model="character"
+        <el-select v-model="role"
                    style='width: 100%;'
-                   placeholder="请选择提现状态">
+                   placeholder="角色类型">
           <el-option
             v-for="item,index in enterStatusMap"
             :key="'enterStatusMap' + index"
