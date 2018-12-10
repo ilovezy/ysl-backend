@@ -1,4 +1,9 @@
 .teacher-basic-info-page {
+  .iconfont {
+    display: inline-block;
+    font-size: 18px;
+    color: #999;
+  }
   .basic-info-wrap {
     background: #fff;
     padding: 60px;
@@ -29,12 +34,17 @@
 
     .basic-bottom {
       .list-item {
+        display: flex;
         padding-bottom: 30px;
         &:last-child {
           padding-bottom: 0;
         }
         .iconfont {
           color: #999;
+          font-size: 20px;
+          padding-right: 10px;
+          position: relative;
+          top: 3px;
         }
 
         .content {

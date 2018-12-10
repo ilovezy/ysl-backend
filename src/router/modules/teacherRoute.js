@@ -9,7 +9,7 @@ export default [
       path: 'teacherBasicInfo',
       component: () => import('@/views/teacher/basicInfo/BasicInfo'),
       name: 'teacherBasicInfo',
-      meta: {title: '基本信息', icon: 'user', noCache: true}
+      meta: {title: '基本信息', icon: 'yslRenyuan', noCache: true}
     }]
   },
   // {
@@ -31,7 +31,7 @@ export default [
       path: 'teacherMyClass',
       component: () => import('@/views/teacher/myClass/MyClass'),
       name: 'teacherMyClass',
-      meta: {title: '我的课程', icon: 'user', noCache: true}
+      meta: {title: '我的课程', icon: 'yslRiqi', noCache: true}
     }]
   }, {
     path: '/teacherOpenClassManage',
@@ -41,7 +41,7 @@ export default [
       path: 'teacherOpenClassManage',
       component: () => import('@/views/teacher/openClassManage/OpenClassManage'),
       name: 'teacherOpenClassManage',
-      meta: {title: '开课管理', icon: 'user', noCache: true}
+      meta: {title: '开课管理', icon: 'yslDiannao', noCache: true}
     }]
   }, {
     path: '/teacherHomeworkManage',
@@ -51,7 +51,7 @@ export default [
       path: 'teacherHomeworkManage',
       component: () => import('@/views/teacher/homeworkManage/HomeworkManage'),
       name: 'teacherHomeworkManage',
-      meta: {title: '作业管理', icon: 'user', noCache: true}
+      meta: {title: '作业管理', icon: 'yslJilu', noCache: true}
     }]
   },
 ]

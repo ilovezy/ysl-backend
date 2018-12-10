@@ -1,7 +1,8 @@
 <template>
   <div class='panel'>
     <div class='panel-title'
-         v-if='title'>{{title}}
+         v-if='title'>
+      <span v-if='icon' class='iconfont' :class='icon'></span> {{title}}
       <span class='panel-subtitle'
             v-if='subTitle'>
         {{subTitle}}
@@ -18,6 +19,10 @@
     name: 'cc-panel',
     props: {
       title: {
+        type: String,
+        default: ''
+      },
+      icon: {
         type: String,
         default: ''
       },

@@ -16,20 +16,20 @@
 
           <div class='basic-bottom'>
             <div class='list-item'>
-              <span class='iconfont'></span>
-              <div class='content'>毕业院校：华中师范大学</div>
+              <span class='iconfont icon-xiaoyuan-'></span>
+              <span class='content'>毕业院校：华中师范大学</span>
             </div>
             <div class='list-item'>
-              <span class='iconfont'></span>
-              <div class='content'>教学经验：五年以上</div>
+              <span class='iconfont icon-touzijilu'></span>
+              <span class='content'>教学经验：五年以上</span>
             </div>
             <div class='list-item'>
-              <span class='iconfont'></span>
-              <div class='content'>自我介绍：本科学历，学士学位。小学高级教师，国家二级心理
+              <span class='iconfont icon-renyuanjieshao'></span>
+              <span class='content'>自我介绍：本科学历，学士学位。小学高级教师，国家二级心理
                 咨询师，市级优秀教师。用心经营着教育，用爱温暖童心，引领
                 孩子沐浴阳光，引导孩子浸润书香 。我相信，生命因阅读而幸福，
                 教育因执著而精彩！
-              </div>
+              </span>
             </div>
           </div>
         </div>
@@ -37,6 +37,7 @@
 
       <el-col :span="14">
         <cc-panel title='课程提醒'
+                  icon='icon-lingdang-xianxing'
                   class='notice-wrap'>
           <div class='class-alert-info'>
             <div class='left-wrap'>
@@ -147,7 +148,7 @@
           debugger
         })
       },
-      
+
       getMyWill() {
         AXIOS.post('/api/classroom/mywill').then(res => {
           this.$message({
