@@ -9,35 +9,11 @@
       <breadcrumb class="breadcrumb-container"></breadcrumb>
     </div>
     <div class="right-menu">
-      <el-tooltip effect="dark"
-                  content="查看文档"
-                  v-if='isTestEnv'
-                  placement="bottom">
-        <router-link to='/documentation'
-                     class='document-icon'>文档
-        </router-link>
-      </el-tooltip>
-
-      <el-dropdown class="avatar-container right-menu-item"
-                   trigger="hover">
-        <div class="login-name">
-          {{loginName}}
-        </div>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>
-            <span @click="doOpenModal"
-                  style="display:block;">
-              修改密码
-            </span>
-          </el-dropdown-item>
-          <el-dropdown-item>
-            <span @click="doLogout"
-                  style="display:block;">
-              退出登录
-            </span>
-          </el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
+      <div class="login-name"
+           style='padding-right: 15px;'
+           @click="doLogout">
+        退出登录
+      </div>
     </div>
 
     <el-dialog width='500px'

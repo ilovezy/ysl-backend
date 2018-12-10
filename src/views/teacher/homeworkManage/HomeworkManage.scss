@@ -32,4 +32,28 @@
       }
     }
   }
+
+  .audio-list-wrap {
+    height: 660px;
+    overflow-y: scroll;
+    .audio-item {
+      display: inline-block;
+      margin-right: 30px;
+      margin-bottom:30px;
+      .audio-cover {
+        width: 180px;
+        height: 180px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        img {
+          width: 100%;
+        }
+      }
+
+      .audio-desc {
+        font-size: 16px;
+        color: #454545;
+      }
+    }
+  }
 }

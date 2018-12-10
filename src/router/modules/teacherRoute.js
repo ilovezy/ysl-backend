@@ -2,16 +2,28 @@ import Layout from '@/views/layout/Layout'
 
 export default [
   {
-    path: '/teacherBasicInfo',
+    path: '',
     component: Layout,
-    redirect: '/teacherBasicInfo',
+    redirect: 'teacherBasicInfo',
     children: [{
       path: 'teacherBasicInfo',
       component: () => import('@/views/teacher/basicInfo/BasicInfo'),
       name: 'teacherBasicInfo',
       meta: {title: '基本信息', icon: 'user', noCache: true}
     }]
-  }, {
+  },
+  // {
+  //   path: '/teacherBasicInfo',
+  //   component: Layout,
+  //   redirect: '/teacherBasicInfo',
+  //   children: [{
+  //     path: 'teacherBasicInfo',
+  //     component: () => import('@/views/teacher/basicInfo/BasicInfo'),
+  //     name: 'teacherBasicInfo',
+  //     meta: {title: '基本信息', icon: 'user', noCache: true}
+  //   }]
+  // },
+  {
     path: '/teacherMyClass',
     component: Layout,
     redirect: '/teacherMyClass',
