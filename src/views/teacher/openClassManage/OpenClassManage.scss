@@ -1,25 +1,64 @@
 .open-class-manage-page {
   .same-height {
     .panel-body {
-      height: 700px;
-      overflow-y: auto!important;
-      padding-top: 0!important;
+      height: 780px !important;
+      overflow-y: auto !important;
+      padding-top: 0 !important;
     }
   }
 
-  .left-list-wrap {
+  .search-wrap {
+    .panel-body {
+      height: 780px !important;
+    }
+  }
+
+  .search-wrap {
     .panel-body {
       padding: 0 30px;
     }
     .list-container {
       background: #F7F7F7;
-      height: 650px;      overflow-y: auto;
+      height: 650px;
+      overflow-y: auto;
     }
     .list-select-item {
       padding: 20px;
       text-align: center;
       font-size: 24px;
       color: #454545;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .class-type {
+        font-size: 18px;
+        color: #333;
+        padding-right: 10px;
+      }
+
+      .center-info {
+        padding-right: 10px;
+        font-size: 16px;
+        text-align: left;
+        .name {
+          color: #333;
+          margin-bottom: 5px;
+        }
+
+        .detail {
+          color: #666;
+
+        }
+      }
+
+      .simple-btn {
+        padding: 10px 14px;
+        font-size: 14px;
+        color: #fff;
+        background: #F19149;
+        border-radius: 0;
+      }
 
       &:last-child {
         margin-bottom: 0;

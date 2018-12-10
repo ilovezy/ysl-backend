@@ -92,3 +92,23 @@
     background-color: #D9D9D9;
   }
 }
+
+.el-table td {
+  height: 75px;
+}
+
+.el-tabs__item {
+  //padding: 12px 0!important;
+  //padding-left: 0!important;
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  width: 120px;
+  text-align: center;
+  color: #333!important;
+}
+
+
+.el-tabs__active-bar {
+  background-color: #F19149!important;
+}

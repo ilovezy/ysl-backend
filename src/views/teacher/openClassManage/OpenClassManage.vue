@@ -1,87 +1,85 @@
 <template>
   <div class="app-container open-class-manage-page">
     <el-row :gutter="30">
-      <el-col :span="6">
-        <cc-panel title='日期'
-                  class='left-list-wrap same-height'>
+      <el-col :span="8">
+        <cc-panel class='search-wrap same-height'>
+          <div style="margin-top: 30px; margin-bottom: 30px;">
+            <el-input placeholder="请输入内容" v-model="searchText" class="input-with-select">
+              <el-button slot="append" icon="el-icon-search"></el-button>
+            </el-input>
+          </div>
           <div class='list-container'>
             <div v-for='item,index in 10'
                  class='list-select-item'>
-              {{'2018-2-3'}}
+              <div class='class-type'>数学</div>
+              <div class='center-info'>
+                <div class='name'>黄晓明</div>
+                <div class='detail'>六年级 / 浙教版</div>
+              </div>
+              <div class='simple-btn'>
+                开课
+              </div>
             </div>
           </div>
         </cc-panel>
       </el-col>
 
-      <el-col :span="18">
-        <cc-panel title='课程安排'
-                  class='notice-wrap same-height'>
-          <div class='main-table-wrap'>
-            <el-table
-              :data="list"
-              tooltip-effect="dark"
-              style="width: 100%;"
-              max-height='650'
-              stripe
-              v-loading="listLoading">
-              <el-table-column
-                prop="mobile"
-                label="上课学生"
-                width='140'
-                show-overflow-tooltip>
-              </el-table-column>
+      <el-col :span="16">
+        <cc-panel class='notice-wrap same-height'>
+          <el-tabs v-model="activeName"
+                   @tab-click="handleClick">
+            <el-tab-pane label="开课列表"
+                         name="openClassList">
+              <div class='main-table-wrap'>
+                <el-table
+                  :data="list"
+                  tooltip-effect="dark"
+                  style="width: 100%;"
+                  max-height='650'
+                  stripe
+                  v-loading="listLoading">
+                  <el-table-column
+                    prop="name"
+                    label="课程"
+                    width='200'
+                    show-overflow-tooltip>
+                  </el-table-column>
 
-              <el-table-column
-                prop="trueName"
-                label="上课科目"
-                width='140'>
-              </el-table-column>
+                  <el-table-column
+                    prop="trueName"
+                    label="上课时间"
+                    width='200'>
+                  </el-table-column>
 
-              <el-table-column
-                prop="identityNumber"
-                label="上课内容"
-                width='200'
-                show-overflow-tooltip>
-              </el-table-column>
+                  <el-table-column
+                    prop="identityNumber"
+                    label="上课时长"
+                    width='200'
+                    show-overflow-tooltip>
+                  </el-table-column>
 
-              <el-table-column
-                prop="registerTime"
-                label="上课时间"
-                width='180'>
-              </el-table-column>
+                  <el-table-column
+                    prop="registerTime"
+                    label="课程状态">
+                  </el-table-column>
+                </el-table>
 
-              <el-table-column
-                label="上课时长"
-                width='120'
-                show-overflow-tooltip>
-                <template slot-scope="scope">
-                  {{scope.row.enterApplyFlag ? '是' : '否'}}
-                </template>
-              </el-table-column>
+                <div class="pagination-container">
+                  <el-pagination background
+                                 v-if='showPagination'
+                                 @size-change="handleSizeChange"
+                                 @current-change="handleCurrentChange"
+                                 :current-page="listQuery.page + 1"
+                                 :page-sizes="[10,20,30, 50]"
+                                 :page-size="listQuery.size"
+                                 layout="total, sizes, prev, pager, next, jumper"
+                                 :total="total">
+                  </el-pagination>
+                </div>
+              </div>
 
-              <el-table-column
-                min-width='320'
-                fixed="right"
-                label="操作">
-                <template slot-scope="scope">
-                  <div class='simple-btn' @click='goAuthInfo(scope.row.id)'>进入课堂</div>
-                </template>
-              </el-table-column>
-            </el-table>
-
-            <div class="pagination-container">
-              <el-pagination background
-                             v-if='showPagination'
-                             @size-change="handleSizeChange"
-                             @current-change="handleCurrentChange"
-                             :current-page="listQuery.page + 1"
-                             :page-sizes="[10,20,30, 50]"
-                             :page-size="listQuery.size"
-                             layout="total, sizes, prev, pager, next, jumper"
-                             :total="total">
-              </el-pagination>
-            </div>
-          </div>
+            </el-tab-pane>
+          </el-tabs>
         </cc-panel>
       </el-col>
     </el-row>
@@ -92,6 +90,8 @@
   export default {
     data() {
       return {
+        activeName: 'openClassList',
+        searchText: '',
         list: [{
           name: 'test'
         }, {

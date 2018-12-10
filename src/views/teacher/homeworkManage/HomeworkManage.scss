@@ -1,19 +1,20 @@
-.open-class-manage-page {
+.homework-manage-page {
   .same-height {
     .panel-body {
-      height: 700px;
-      overflow-y: auto!important;
-      padding-top: 0!important;
+      height: 780px !important;
+      overflow-y: auto !important;
+      padding-top: 0 !important;
     }
   }
 
   .left-list-wrap {
     .panel-body {
-      padding: 0 30px;
+      padding: 30px !important;
     }
     .list-container {
       background: #F7F7F7;
-      height: 650px;      overflow-y: auto;
+      height: 720px;
+      overflow-y: auto;
     }
     .list-select-item {
       padding: 20px;
